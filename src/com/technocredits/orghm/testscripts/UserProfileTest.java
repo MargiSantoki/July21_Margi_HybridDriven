@@ -55,10 +55,10 @@ public class UserProfileTest extends TestBase {
 		String expectedVersion = "OrangeHRM 7.2.159485";
 		softAssert.assertEquals(actualVersion, expectedVersion);
 
-		System.out.println("STEP : Verify employees");
-		String actualEmployees = userProfilePage.getEmployeesFromAboutPopup();
-		String expectedEmployees = "101 (299 more allowed)";
-		softAssert.assertEquals(actualEmployees, expectedEmployees);
+//		System.out.println("STEP : Verify employees");
+//		String actualEmployees = userProfilePage.getEmployeesFromAboutPopup();
+//		String expectedEmployees = "101 (299 more allowed)";
+//		softAssert.assertEquals(actualEmployees, expectedEmployees);
 
 		System.out.println("STEP : Verify users");
 		String actualUsers = userProfilePage.getUsersFromAboutPopup();

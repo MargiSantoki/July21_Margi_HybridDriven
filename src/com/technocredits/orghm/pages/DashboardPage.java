@@ -2,8 +2,6 @@ package com.technocredits.orghm.pages;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
-
 import com.technocredits.orghm.base.PredefinedActions;
 
 public class DashboardPage extends PredefinedActions {
@@ -13,11 +11,11 @@ public class DashboardPage extends PredefinedActions {
 	}
 
 	public String getPageTitle() {
-		return driver.findElement(By.xpath("//li[text()='Dashboard']")).getText();
+		return getElement("XPATH", "//li[text()='Dashboard']", false).getText();
 	}
 
 	public int getTotalWidgets() {
-		return driver.findElements(By.xpath("//div[@id='widget.id']")).size();
+		return getElements("XPATH", "//div[@id='widget.id']", false).size();
 	}
 
 	public List<String> getAllWidgetsText() {
