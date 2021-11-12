@@ -1,30 +1,28 @@
 package com.technocredits.orghm.pages;
 
-import org.openqa.selenium.By;
-
 import com.technocredits.orghm.base.PredefinedActions;
 
 public class LoginPage extends PredefinedActions {
 
 	public boolean isLogoDisplayed() {
-		return driver.findElement(By.xpath("//img")).isDisplayed();
+		return getElement("XPATH", "//img", false).isDisplayed();
 	}
 
 	public boolean isLoginPanelDisplayed() {
-		return driver.findElement(By.xpath("//div[@id='divLoginForm']")).isDisplayed();
+		return getElement("XPATH", "//div[@id='divLoginForm']", false).isDisplayed();
 	}
 
 	public void enterCredentials(String username, String password) {
-		driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys(username);
-		driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys(password);
+		getElement("XPATH", "//input[@id='txtUsername']", false).sendKeys(username);
+		getElement("XPATH", "//input[@id='txtPassword']", false).sendKeys(password);
 	}
 
 	public MenuPage clickOnLoginButton() {
-		driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
+		clickOnElement(getElement("XPATH", "//input[@id='btnLogin']", false));
 		return new MenuPage();
 	}
 
 	public String getLoginErrorMessage() {
-		return driver.findElement(By.xpath("//span[@id='spanMessage']")).getText();
+		return getElement("XPATH", "//span[@id='spanMessage']", false).getText();
 	}
 }
